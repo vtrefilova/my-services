@@ -1,0 +1,44 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin:21px;
+    position: relative
+}
+
+form :last-child {
+    justify-self: end
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+
+
+.button {
+    background-color: #7749F8;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    border: 0;
+    color: #FFFFFF;
+
+}
+
+.input {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0.375rem 0.75rem;
+    width:100%;
+    background-color: #F8FAFC;
+    border: 0;
+    margin: 21px 0;
+    padding: 16px
+}

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+
+.SearchString {
+    background-color: rgba(0, 125, 215, 0.7);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #DEE2E6;
+}
+
+button {
+    border: 1px solid #FFFFFF;
+    background-color: #7749F8;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #DEE2E6;
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+input {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 17px;
+    background: #FFFFFF;
+    margin-left: 21px;
+    margin-right: 12px;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #ABB5BE;
+}

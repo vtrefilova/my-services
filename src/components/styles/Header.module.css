@@ -1,0 +1,32 @@
+.Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #7749F8;
+}
+.HeaderButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.HeaderGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+
+.HeaderTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin-left: 45px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
