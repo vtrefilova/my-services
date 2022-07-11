@@ -14,17 +14,16 @@ const { text, children} = props;
 
 return (
   <>
-    <button className={styles.button} variant="primary" onClick={handleShow}>
-      {text}
-    </button>
-
+    <div onClick={handleShow}>
+    {children.modalTrigger}
+    </div>
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>{text}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <ModalContext.Provider value={handleClose}>
-        {children}
+        {children.modalContent}
         </ModalContext.Provider>
       </Modal.Body>
     </Modal>

@@ -9,10 +9,20 @@ function App() {
     <div className="App">
       <Header>
         <ModalWindow text='Регистрация'>
-          <SignupForm/>
+          {{ modalTrigger:
+            (<button key='modalTrigger'>
+              Регистрация
+            </button>),
+            modalContent: <SignupForm key='modalContent'/>
+          }}
         </ModalWindow>
         <ModalWindow text='Вход'>
-          <LoginForm/>
+        {{ modalTrigger:
+            (<button key='modalTrigger'>
+              Вход
+            </button>),
+            modalContent: <LoginForm key='modalContent'/>
+          }}
         </ModalWindow>
       </Header>
     </div>
