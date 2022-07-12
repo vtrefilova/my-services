@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles/Card.module.css"
 
-export const Card = ({ handleModal } ) => {
+export const Card = ({ handleModal, title, city, price, date } ) => {
     const onCardClick = () => {
         if (handleModal) {
             handleModal()
@@ -12,18 +12,18 @@ export const Card = ({ handleModal } ) => {
         <div className={styles.card} onClick={onCardClick}>
             <div className={styles.card_header}>
                 <div className={styles.card_title}>
-                    Уборка квартиры
+                    {title}
                 </div>
                 <div className={styles.card_city}>
-                    Нововсибирск
+                    {city}
                 </div>
             </div>
             <div className={styles.card_body}>
-                3000 руб/усл
+                {`${price} руб/усл`}
             </div>
             <div className={styles.card_footer}>
                 <div className={styles.card_date}>
-                    Опубликованно 01.01.22
+                    {`Опубликованно ${date}`}
                 </div>
                 <button className={styles.card_button} onClick={(e) => {e.stopPropagation()}}>
                     Заказать
