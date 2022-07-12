@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+
+
+.App-header-button {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #DEE2E6;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}

@@ -13,8 +13,9 @@ export const SearchString = () => {
                 onChange={(e) => {setText(e.target.value)}}
                 value={text}
                 placeholder="Поиск услуги"
+                className={styles.input}
             />
-            <button>Найти</button>
+            <button className={styles.button}>Найти</button>
         </div>
     );
 }

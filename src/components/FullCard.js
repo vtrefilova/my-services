@@ -1,20 +1,35 @@
 import React from "react";
+import styles from './styles/FullCard.module.css'
 
 export const FullCard = (props) => {
     return (
-        <div className="full-card">
-            <div className="full-card-header">
-            </div>
-            <div className="card-body">
-                <div className="full-card-title"></div>
-                <div className="full-card-description"></div>
-                <div className="full-card-price"></div>
-            </div>
-            <div className="card-footer">
-                <div className="card-date">
+        <div className={styles.full_card}>
+            <div className={styles.full_card_header}>
+                <div className={styles.full_card_executor} >
+                    Вася Пупкин
                 </div>
-                <div className="card-button">
+                <div className={styles.full_card_city} >
+                    Новосибирск
                 </div>
+            </div>
+            <div className="full-card-body">
+                <div className={styles.full_card_title}>
+                    Уборка квартиры
+                </div>
+                <div className={styles.full_card_description}>
+                    Hвытсщцх каызцу= ацуллллллл ывзф сьывлофтмау шеирпщос лвчжыоиашугщшваы ывопузкщжываьсдлы
+                </div>
+                <div className={styles.full_card_price}>
+                    3000 руб/усл
+                </div>
+            </div>
+            <div className={styles.full_card_footer}>
+                <div className={styles.full_card_date}>
+                    Опубликованно 01.01.22
+                </div>
+                <button className={styles.full_card_button}>
+                    Заказать
+                </button>
             </div>
         </div>
     );

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Mulish:wght@300&family=Noto+Sans:wght@500&display=swap');
+
+.full_card {
+    display: flex;
+    flex-direction: column;
+}
+
+.full_card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+ .full_card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+
+ .full_card_button {
+    background-color: #7749F8;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    border: 0;
+    color: #FFFFFF;
+
+}
+
+.full_card_title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #152536;
+    margin-top: 32px;
+    margin-bottom: 21px;
+
+}
+
+.full_card_city {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7B828A;
+}
+
+.full_card_executor {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7B828A;
+}
+
+.full_card_description {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7B828A;
+}
+
+.full_card_price {
+    margin-top: 21px;
+    margin-bottom: 21px;
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: #7749F8;
+}
+
+.full_card_date {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7B828A;
+}

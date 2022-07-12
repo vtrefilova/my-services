@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Mulish:wght@300&family=Noto+Sans:wght@500&display=swap');
+
+.card {
+    max-width: 350px;
+    padding-left: 22px;
+    padding-top: 35px;
+    padding-right: 22px;
+    padding-bottom: 15px;
+    background: #FFFFFF;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+}
+
+.card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+
+ .card_button {
+    background-color: #7749F8;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    border: 0;
+    color: #FFFFFF;
+
+}
+
+.card_title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #152536;
+
+}
+
+.card_city {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7B828A;
+}
+
+.card_body {
+    margin-top: 38px;
+    margin-bottom: 38px;
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: #7749F8;
+}
+
+.card_date {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7B828A;
+}

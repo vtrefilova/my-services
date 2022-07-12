@@ -2,6 +2,7 @@ import { Header } from './Header';
 import { LoginForm } from './Login';
 import { ModalWindow } from './Modal';
 import { SignupForm } from './SignupForm';
+import { Body } from './Body';
 import './styles/App.css';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       <Header>
         <ModalWindow text='Регистрация'>
           {{ modalTrigger:
-            (<button key='modalTrigger'>
+            (<button key='modalTrigger' className='App-header-button'>
               Регистрация
             </button>),
             modalContent: <SignupForm key='modalContent'/>
@@ -18,13 +19,14 @@ function App() {
         </ModalWindow>
         <ModalWindow text='Вход'>
         {{ modalTrigger:
-            (<button key='modalTrigger'>
+            (<button key='modalTrigger' className='App-header-button'>
               Вход
             </button>),
             modalContent: <LoginForm key='modalContent'/>
           }}
         </ModalWindow>
       </Header>
+      <Body/>
     </div>
   );
 }

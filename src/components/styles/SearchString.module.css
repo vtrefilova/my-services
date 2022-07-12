@@ -10,7 +10,7 @@
     color: #DEE2E6;
 }
 
-button {
+.button {
     border: 1px solid #FFFFFF;
     background-color: #7749F8;
     font-family: 'Inter';
@@ -26,7 +26,7 @@ button {
     padding-right: 16px;
 }
 
-input {
+.input {
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 17px;
