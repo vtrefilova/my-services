@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { SearchString } from './SearchString';
-import styles from "./styles/Header.module.css"
+import styles from "./styles/Header.module.css";
+import { ModalWindow } from './Modal';
+import { SignupForm } from './SignupForm';
+import { LoginForm } from './Login';
+import { HeaderButton } from './HeaderButton';
 
 
 
-export const Header = (props) => {
-    const { children } = props;
+export const Header = () => {
+    
     return (
         <header className={styles.Header}>
             <div className={styles.HeaderGroup}>
@@ -13,7 +17,18 @@ export const Header = (props) => {
                 <SearchString/>
             </div>
             <div className={styles.HeaderButtons}>
-                {children}
+                <ModalWindow text='Регистрация'>
+                {{ modalTrigger:
+                    <HeaderButton key='modalTrigger' className='App-header-button' text='Регистрация' />,
+                    modalContent: <SignupForm key='modalContent'/>
+                }}
+                </ModalWindow>
+                <ModalWindow text='Вход'>
+                {{ modalTrigger:
+                    <HeaderButton key='modalTrigger' className='App-header-button' text='Вход' />,
+                    modalContent: <LoginForm key='modalContent'/>
+                }}
+                </ModalWindow>
             </div>
         </header>
     );

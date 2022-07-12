@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "./styles/Card.module.css"
 
-export const Card = (props) => {
+export const Card = ({ handleModal } ) => {
+    const onCardClick = () => {
+        if (handleModal) {
+            handleModal()
+        }
+    }
+
     return (
-        <div className={styles.card}>
+        <div className={styles.card} onClick={onCardClick}>
             <div className={styles.card_header}>
                 <div className={styles.card_title}>
                     Уборка квартиры

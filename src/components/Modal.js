@@ -1,22 +1,19 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, cloneElement } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import styles from './styles/Modal.module.css';
 export const ModalContext = createContext({});
 
-export const ModalWindow = (props) => {
+export const ModalWindow = ({ text, children }) => {
 
 const [show, setShow] = useState(false);
 
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
-const { text, children} = props;
-
 
 return (
   <>
-    <div onClick={handleShow}>
-    {children.modalTrigger}
-    </div>
+    {cloneElement(children.modalTrigger, { handleModal: handleShow })}
+
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>{text}</Modal.Title>

@@ -9,5 +9,8 @@
     font-size: 16px;
     line-height: 16px;
     color: #DEE2E6;
+}
 
+.trigger {
+    width: auto;
 }

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
-import styles from './styles/Signup.module.css'
+import styles from './styles/Signup.module.css';
+import {ModalContext} from './Modal';
 
 
 const validate = values => {
@@ -32,6 +33,7 @@ const validate = values => {
 };
 
 export const LoginForm = () => {
+  const handleClose = useContext(ModalContext);
 
   const formik = useFormik({
     initialValues: {
@@ -41,18 +43,19 @@ export const LoginForm = () => {
       password: '',
     },
     validate,
-    onSubmit: (values,e) => {
+    onSubmit: async(values) => {
       delete values.passwordCheck;
       const form = JSON.stringify(values, null, 2);
-      alert(form);
-      axios.post('/user', form)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    },
+      const result = await axios.post('/user', form)
+        .then(function (response) {
+          console.log(response);
+          handleClose();
+          return result;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
   });
   return (
     <form className={styles.form} onSubmit={formik.handleSubmit}>

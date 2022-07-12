@@ -6,10 +6,11 @@ import styles from './styles/CardContainer.module.css'
 
 export const CardContainer = () => {
     return (
-        <div className='card_container'>
+        <div className={styles.card_container}>
             <ModalWindow>
-                {{ modalTrigger: <Card/>,
-                    modalContent: <FullCard/>
+                {{ 
+                    modalTrigger: <Card />,
+                    modalContent: <FullCard />
                 }}
             </ModalWindow>
             <ModalWindow>
