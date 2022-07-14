@@ -1,0 +1,56 @@
+.body_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 68px;
+    margin-left: 13%;
+    margin-right: 13%;
+    margin-bottom: 26px;
+    
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+
+.body_tagline {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 7px;
+    gap: 10px;
+    background: #7749F8;
+    border-radius: 2px;
+}
+
+.label_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 11px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.label_button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+.filter_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

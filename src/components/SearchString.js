@@ -1,16 +1,14 @@
 import React, { useState, useContext } from 'react';
 import styles from './styles/SearchString.module.css';
-import { AppContext}  from './App';;
+import { AppContext }  from './App';
 
 export const SearchString = () => {
     const [text, setText] = useState('');
-    const titleFilter = useContext(AppContext).titleFiler;
+    const titleFilter = useContext(AppContext).titleFilter;
     
     return (
         <div className={styles}>
             <input
-                id="lastName"
-                name="lastName"
                 type="text"
                 onChange={titleFilter.onChange}
                 value={titleFilter.text}

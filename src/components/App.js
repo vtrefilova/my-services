@@ -53,9 +53,14 @@ const cards = [
 
 function App() {
   const [text, setText] = useState('');
+  const [city, setCity] = useState('');
 
   return (
-    <AppContext.Provider value={{cards, titleFiler: {text, onChange: (e) => {setText(e.target.value)}}, cityFiler: '', dateFilter: ''}}>
+    <AppContext.Provider value={{
+      cards,
+      titleFilter: {text, onChange: (e) => {setText(e.target.value)}},
+      cityFilter: {city, onClick: (string) => {setCity(string)}},
+      dateFilter: ''}}>
       <div className="App">
         <Header/>
         <Body/>

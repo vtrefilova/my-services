@@ -46,17 +46,16 @@ export const LoginForm = () => {
     onSubmit: async(values) => {
       delete values.passwordCheck;
       const form = JSON.stringify(values, null, 2);
-      const result = await axios.post('/user', form)
-        .then(function (response) {
-          console.log(response);
-          handleClose();
-          return result;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      try {
+        const result = await axios.post('/user', form);
+        console.log(result);
+        handleClose();
+      } catch(err) {
+        alert(err);
       }
-  });
+    }
+      })
+  
   return (
     <form className={styles.form} onSubmit={formik.handleSubmit}>
       <label htmlFor="lastName">Фамилия</label>

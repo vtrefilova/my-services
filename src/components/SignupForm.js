@@ -48,19 +48,22 @@ export const SignupForm = (props) => {
       passwordCheck: '',
     },
     validate,
-    onSubmit:  async(values) => {
+    onSubmit: async(values) => {
       delete values.passwordCheck;
       const form = JSON.stringify(values, null, 2);
-      const result = await axios.post('/user', form)
-        .then(function (response) {
-          console.log(response);
-          handleClose();
-          return result;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+<<<<<<< HEAD
+      try {
+        const result = await axios.post('/', form);
+        console.log(result);
+        handleClose();
+      } catch(err) {
+        alert(err);
+=======
+      const result = await axios.post('/user', form);
+      handleClose();
+>>>>>>> 61ed9fd9a1c7a27f63a4aa18f5bb2d6e62a338c5
       }
+    }
 });
 
   return (
