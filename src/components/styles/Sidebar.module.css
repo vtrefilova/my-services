@@ -18,7 +18,7 @@
     color: #7B828A;
 }
 
-.link:active{
+.link.active{
     color: #7749F8;
 }
 
