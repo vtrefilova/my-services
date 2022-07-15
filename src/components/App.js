@@ -3,8 +3,10 @@ import { Header } from './Header';
 import { LoginForm } from './Login';
 import { ModalWindow } from './Modal';
 import { SignupForm } from './SignupForm';
-import { Body } from './Body';
+import { MainPage } from './MainPage';
 import './styles/App.css';
+import { Routes, Route, Link} from 'react-router-dom' 
+import { UserProfile } from './UserProfile';
 
 export const AppContext = React.createContext({});
 
@@ -57,14 +59,18 @@ function App() {
 
   return (
     <AppContext.Provider value={{
+      isLoggedin: true,
       cards,
       titleFilter: {text, onChange: (e) => {setText(e.target.value)}},
       cityFilter: {city, onClick: (string) => {setCity(string)}},
       dateFilter: ''}}>
       <div className="App">
         <Header/>
-        <Body/>
       </div>
+      <Routes>
+          <Route path="/" element={<MainPage/>}/>
+          <Route path="/profile/*" element={<UserProfile/>}/>
+        </Routes>
     </AppContext.Provider>
   );
 }

@@ -1,0 +1,35 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.link_block {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.link_block:hover {
+    background: #F5F5F5;
+}
+
+.link_block:hover .link {
+    color: #7B828A;
+}
+
+.link:active{
+    color: #7749F8;
+}
+
+.link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7B828A;
+    text-decoration: none;
+
+}
+

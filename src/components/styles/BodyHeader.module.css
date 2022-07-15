@@ -4,8 +4,8 @@
     align-items: center;
     flex-wrap: wrap;
     margin-top: 68px;
-    margin-left: 13%;
-    margin-right: 13%;
+    margin-left: 16px;
+    margin-right: 16px;
     margin-bottom: 26px;
     
 
@@ -30,6 +30,7 @@
     gap: 10px;
     background: #7749F8;
     border-radius: 2px;
+    margin-right: 16px;
 }
 
 .label_text {
@@ -53,4 +54,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (min-width: 800px) {
+    .body_header {
+        max-width: 740px;
+        margin: auto;
+        margin-top: 68px;
+        margin-bottom: 26px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .body_header {
+        max-width: 1130px;
+        margin: auto;
+        margin-top: 68px;
+        margin-bottom: 26px;
+    }
 }

@@ -51,17 +51,18 @@ export const SignupForm = (props) => {
     onSubmit: async(values) => {
       delete values.passwordCheck;
       const form = JSON.stringify(values, null, 2);
-<<<<<<< HEAD
+      const headers = {
+        'Cache-Control': 'no-cache',
+        'Accept-Language': 'ru-RU',
+        'Content-Type': 'application/json;charset=utf-8',
+    };
+
       try {
-        const result = await axios.post('/', form);
+        const result = await axios.post('http://localhost:8080/api/signUp ' , form, { headers });
         console.log(result);
         handleClose();
       } catch(err) {
         alert(err);
-=======
-      const result = await axios.post('/user', form);
-      handleClose();
->>>>>>> 61ed9fd9a1c7a27f63a4aa18f5bb2d6e62a338c5
       }
     }
 });

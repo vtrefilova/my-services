@@ -28,7 +28,7 @@ export const Filter = () => {
 
     return (
         <Dropdown autoClose="outside">
-        <Dropdown.Toggle style={{backgroundColor: 'rgba(0, 0, 0, 0)', color: '#68717A', border: '0', boxShadow: '0'}} variant="success" id="dropdown-basic">
+        <Dropdown.Toggle style={{backgroundColor: 'rgba(0, 0, 0, 0)', color: '#68717A', border: '0', boxShadow: "none", padding: '0'}} variant="success" id="dropdown-basic">
           Фильтры
         </Dropdown.Toggle>
   
