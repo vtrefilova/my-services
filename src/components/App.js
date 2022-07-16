@@ -7,6 +7,9 @@ import { MainPage } from './MainPage';
 import './styles/App.css';
 import { Routes, Route, Link} from 'react-router-dom' 
 import { UserProfile } from './UserProfile';
+import { UserOrders } from './UserOrders';
+import { UserServices } from './UserServices';
+import { findAllByTestId } from '@testing-library/react';
 
 export const AppContext = React.createContext({});
 
@@ -14,7 +17,7 @@ const cards = [
   {
       executor: "Иван Иванов",
       city: "Москва",
-      title: 'Стрижка гозона',
+      title: 'Стрижка газона',
       description: 'Стригу газоны классно дешево',
       price: 2000,
       date: '19.01.22',
@@ -51,6 +54,14 @@ const cards = [
       price: 3000,
       date: '19.01.22',
   },
+  {
+    executor: "Иван Смирнов",
+    city: "Томск",
+    title: 'Мытье окон',
+    description: 'Моем на высоте',
+    price: 5000,
+    date: '19.01.22',
+},
 ]
 
 function App() {
@@ -70,7 +81,9 @@ function App() {
       <Routes>
           <Route path="/" element={<MainPage/>}/>
           <Route path="/profile/*" element={<UserProfile/>}/>
-        </Routes>
+          <Route path='/profile/user_orders' element={<UserOrders/>}/>
+          <Route path='/profile/user_services' element={<UserServices/>}/>
+      </Routes>
     </AppContext.Provider>
   );
 }

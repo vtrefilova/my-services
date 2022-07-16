@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './styles/FullCard.module.css'
 
-export const FullCard = ({ title, city, price, date, executor, description }) => {
+export const FullCard = ({ title, city, price, date, executor, description, action }) => {
     return (
         <div className={styles.full_card}>
             <div className={styles.full_card_header}>
@@ -28,7 +28,7 @@ export const FullCard = ({ title, city, price, date, executor, description }) =>
                     {`Опубликованно ${date}`}
                 </div>
                 <button className={styles.full_card_button}>
-                    Заказать
+                    { action }
                 </button>
             </div>
         </div>

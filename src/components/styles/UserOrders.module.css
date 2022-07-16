@@ -1,0 +1,21 @@
+.user_info {
+    display: flex;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
+
+.page_title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 24px;
+    margin-bottom: 45px;
+
+    color: #152536;
+}
+
+.page {
+    margin-top: 56px;
+    margin-left: 40px;
+}

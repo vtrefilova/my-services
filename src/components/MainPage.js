@@ -6,7 +6,7 @@ export const MainPage = () => {
     return (
         <div className='app-body'>
             <BodyHeader/>
-            <CardContainer/>
+            <CardContainer buttonText='Заказать'/>
         </div>
     );
 }

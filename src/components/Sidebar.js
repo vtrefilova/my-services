@@ -16,15 +16,11 @@ export const Sidebar = () => {
         <>
         <aside className={styles.sidebar}>
             {links.map((el) => (
-                <div className={styles.link_block} key={el.id}>
-                    <Link className={cn({[styles.link]: true, [styles.active]: el.id === active})} to={el.to} onClick={() => {setActive(el.id); console.log(active)}}>{el.text}</Link>
+                <div className={styles.link_block} key={el.id} onClick={() => {setActive(el.id); console.log(active)}}>
+                    <Link className={cn({[styles.link]: true, [styles.active]: el.id === active})} to={el.to}>{el.text}</Link>
                 </div>
             ))}
         </aside>
-        <Routes>
-            <Route path='/profile/user_orders' element={<UserOrders/>}/>
-            <Route path='/profile/user_services' element={<UserServices/>}/>
-        </Routes>
         </>
     )
 }

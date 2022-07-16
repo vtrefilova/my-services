@@ -42,9 +42,6 @@ export const Filter = () => {
                 </input>
             </Dropdown.Item>
             {cityList.length ? cityList.map((el, i) => (<Dropdown.Item key={i} name={el.name} onClick={(e) => cityFilter.onClick(e.target.name)}>{el.name}</Dropdown.Item>)): null}
-            <Dropdown.Divider />
-            <Dropdown.Header>По дате размещения</Dropdown.Header>
-            <Dropdown.Item>По дате размещения</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     );

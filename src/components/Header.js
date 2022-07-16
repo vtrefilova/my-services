@@ -9,16 +9,6 @@ import { AppContext }  from './App';
 import { Link } from 'react-router-dom';
 import { ServiceForm } from './ServiceForm';
 
-const linkStyle ={
-    fontFamily: 'Inter',
-    fontStyle: 'normal',
-    fontWeight: '500',
-    fontSize: '16px',
-    color: '#DEE2E6',
-    textDecoration: 'none',
-    marginLeft: '15px'
-}
-
 export const Header = () => {
     const isLoggedin = useContext(AppContext).isLoggedin;
     
@@ -53,10 +43,10 @@ export const Header = () => {
                             modalContent: <ServiceForm key='modalContent'/>
                         }}
                         </ModalWindow>
-                        <Link style={linkStyle} to="/profile/user_services">Мои услуги</Link>
-                        <Link style={linkStyle} to="/profile/user_orders">Мои заказы</Link>
+                        <Link className={styles.link} to="/profile/user_services">Мои услуги</Link>
+                        <Link className={styles.link} to="/profile/user_orders">Мои заказы</Link>
                     </div>
-                    <Link  style={linkStyle} to="/profile">Профиль пользователя</Link>
+                    <Link  className={styles.link} to="/profile">Василий Пупкин</Link>
                 </div>
                 </>}
             </div>

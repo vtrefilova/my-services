@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import styles from './styles/Signup.module.css';
 import {ModalContext} from './Modal';
+import { AppContext}  from './App';
 
 
 const validate = values => {
@@ -55,12 +56,15 @@ export const SignupForm = (props) => {
         'Cache-Control': 'no-cache',
         'Accept-Language': 'ru-RU',
         'Content-Type': 'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
     };
 
       try {
-        const result = await axios.post('http://localhost:8080/api/signUp ' , form, { headers });
+        const result = await axios.post('https://cftmos.herokuapp.com/api/signUp' , form, { headers });
         console.log(result);
         handleClose();
+        
       } catch(err) {
         alert(err);
       }

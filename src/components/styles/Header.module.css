@@ -12,6 +12,7 @@
     margin-right: 32px;
 }
 
+
 .HeaderGroup {
     display: flex;
     flex-direction: row;
@@ -35,9 +36,26 @@
 
 .button_group_1 {
     display: flex;
+    justify-content: space-between;
 }
 
 .button_group_2 {
     display: flex;
-    justify-content: space-between;
+}
+
+.link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #DEE2E6;
+    text-decoration: none;
+    margin-left: 16px;
+
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #DEE2E6;
 }

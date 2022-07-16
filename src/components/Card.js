@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles/Card.module.css"
 
-export const Card = ({ handleModal, title, city, price, date } ) => {
+export const Card = ({ handleModal, title, city, price, date, action } ) => {
     const onCardClick = () => {
         if (handleModal) {
             handleModal()
@@ -26,7 +26,7 @@ export const Card = ({ handleModal, title, city, price, date } ) => {
                     {`Опубликованно ${date}`}
                 </div>
                 <button className={styles.card_button} onClick={(e) => {e.stopPropagation()}}>
-                    Заказать
+                    {action}
                 </button>
             </div>
         </div>

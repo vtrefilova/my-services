@@ -7,13 +7,21 @@ import { AppContext}  from './App';
 
 
 
-export const CardContainer = () => {
+export const CardContainer = ({ userName, buttonText }) => {
     const cards = useContext(AppContext).cards;
     const titleFilter = useContext(AppContext).titleFilter;
     const cityFilter = useContext(AppContext).cityFilter;
     const filteredCards = cards
                                 .filter((el) => el.title.toLowerCase().includes(titleFilter.text.toLowerCase()))
                                 .filter((el) => el.city.toLowerCase().includes(cityFilter.city.toLowerCase()))
+                                .filter((el) => el.executor.toLowerCase().includes(userName.toLowerCase()))
+    if (!filteredCards.length) {
+        return (
+            <div className={styles.card_container}>
+                <div className={styles.text}>Таких услуг нет :/</div>
+            </div>
+    )
+    }
     return (
         <div className={styles.card_container}>
             {filteredCards.map((el, i) => (
@@ -25,6 +33,7 @@ export const CardContainer = () => {
                                     title={el.title}
                                     price={el.price}
                                     date={el.date}
+                                    action={buttonText}
                                     />,
                     modalContent: <FullCard
                                     key={i*100}
@@ -34,6 +43,7 @@ export const CardContainer = () => {
                                     description={el.description}
                                     price={el.price}
                                     date={el.date}
+                                    action={buttonText}
                                     />
                 }}
             </ModalWindow>
@@ -41,3 +51,7 @@ export const CardContainer = () => {
         </div>
     );
 }
+
+CardContainer.defaultProps = {
+    userName: ""
+  }

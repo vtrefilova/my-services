@@ -10,12 +10,12 @@ export const UserProfile = () => {
             <div className={styles.page}>
             <div className={styles.page_title}>Личная информация</div>
             <div className={styles.field_container}>
-                <div className={styles.field_title}>Фамилия</div>
-                <div className={styles.field_text}>Пупкин</div>
+                <div className={styles.field_title }>Фамилия</div>
+                <div className={styles.field_text} style={{marginLeft: '4px'}}>Пупкин</div>
             </div>
             <div className={styles.field_container}>
                 <div className={styles.field_title}>Имя</div>
-                <div className={styles.field_text}>Василий</div>
+                <div className={styles.field_text} style={{marginLeft: '52px'}}>Василий</div>
             </div>
             <div className={styles.field_container}>
                 <div className={styles.field_title}>Отчество</div>
