@@ -40,21 +40,56 @@ export const Filter = () => {
                 <CustomInput
                 value={text}
                 onChange={onInputChange}
-                className={styles.input}
+                placeholder='Поиск'
                 >
                 </CustomInput>
             </CustomDropdownItem>
-            {cityList.length ? cityList.map((el, i) => (<Dropdown.Item key={i} name={el.name} onClick={(e) => cityFilter.onClick(e.target.name)}>{el.name}</Dropdown.Item>)): null}
+            {cityList.length ? cityList.map((el, i) => (<OtherCustomDropdownItem key={i} name={el.name} onClick={(e) => cityFilter.onClick(e.target.name)}>{el.name}</OtherCustomDropdownItem>)): null}
         </Dropdown.Menu>
       </Dropdown>
     );
 }
 
 const CustomDropdownItem = styled(Dropdown.Item)`
-  :active: background-color: red,
+  &:active {
+    background-color: #FFFFFF;
+  }
+  &:hover {
+    background-color: #FFFFFF;
+  }
+`
+const OtherCustomDropdownItem = styled(Dropdown.Item)`
+  &:active {
+    background-color: #7749F8;
+    color: black;
+  }
+  &:hover {
+    background-color: #F8F9FA;
+  }
 `
 
 const CustomInput = styled.input`
-  outline: none,
+  outline: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 30px;
+  background: #FFFFFF;
+  border: 1px solid #DEE2E6;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ABB5BE;
+  background-image: url(/Users/valeriatrefilova/Study/shift-22-front/src/components/images/icons8-search.svg);
+  background-repeat: no-repeat;
+  background-size: 40% 40%;
+  background-position: -17px;
+  &:focus {
+    border-color:#7749F8;
+  }
+  &:-webkit-input-placeholder {
+    color: #ABB5BE;
+  }
 
 `
