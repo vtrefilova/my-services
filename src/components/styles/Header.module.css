@@ -26,6 +26,8 @@
 }
 
 .header_title {
+    display: flex;
+    flex-shrink: 1;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;

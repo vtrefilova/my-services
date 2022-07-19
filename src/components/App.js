@@ -126,10 +126,10 @@ function App() {
         <Header/>
       </div>
       <Routes>
-          <Route path="/" element={<MainPage/>}/>
-          <Route path="/profile/*" element={<UserProfile/>}/>
-          <Route path='/profile/user_orders' element={<UserOrders/>}/>
-          <Route path='/profile/user_services' element={<UserServices/>}/>
+          <Route path="/*" element={<MainPage/>}/>
+          <Route path="/profile" element={<UserProfile/>}/>
+          <Route path='/user_orders' element={<UserOrders/>}/>
+          <Route path='/user_services' element={<UserServices/>}/>
       </Routes>
     </AppContext.Provider>
   );

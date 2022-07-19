@@ -10,16 +10,9 @@
     padding-right: 10px;
 }
 
-.link_block:hover {
-    background: #F5F5F5;
-}
-
-.link_block:hover .link {
+.link:hover {
     color: #7B828A;
-}
-
-.link.active{
-    color: #7749F8;
+    background: #F8F9FA;
 }
 
 .link {
@@ -30,6 +23,14 @@
     line-height: 16px;
     color: #7B828A;
     text-decoration: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
 
+}
+
+link.active {
+    background-color: black;
 }
 

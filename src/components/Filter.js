@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from "axios";
 import { AppContext }  from './App';
+import styles from  './styles/Filter.module.css';
+import styled from "styled-components";
 
 export const Filter = () => {
     const [ text, setText ] = useState('');
@@ -34,15 +36,25 @@ export const Filter = () => {
   
         <Dropdown.Menu>
             <Dropdown.Header>По городу</Dropdown.Header>
-            <Dropdown.Item role='search'>
-                <input
+            <CustomDropdownItem role='search'>
+                <CustomInput
                 value={text}
                 onChange={onInputChange}
+                className={styles.input}
                 >
-                </input>
-            </Dropdown.Item>
+                </CustomInput>
+            </CustomDropdownItem>
             {cityList.length ? cityList.map((el, i) => (<Dropdown.Item key={i} name={el.name} onClick={(e) => cityFilter.onClick(e.target.name)}>{el.name}</Dropdown.Item>)): null}
         </Dropdown.Menu>
       </Dropdown>
     );
 }
+
+const CustomDropdownItem = styled(Dropdown.Item)`
+  :active: background-color: red,
+`
+
+const CustomInput = styled.input`
+  outline: none,
+
+`

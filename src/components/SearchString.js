@@ -6,7 +6,7 @@ export const SearchString = () => {
     const titleFilter = useContext(AppContext).titleFilter;
     
     return (
-        <div className={styles}>
+        <div className='search_string'>
             <input
                 type="text"
                 onChange={titleFilter.onChange}

@@ -41,8 +41,8 @@ export const Header = () => {
                             modalContent: <ServiceForm key='modalContent'/>
                         }}
                         </ModalWindow>
-                        <Link className={styles.link} to="/profile/user_services">Мои услуги</Link>
-                        <Link className={styles.link} to="/profile/user_orders">Мои заказы</Link>
+                        <Link className={styles.link} to="/user_services">Мои услуги</Link>
+                        <Link className={styles.link} to="/user_orders">Мои заказы</Link>
                     </div>
                     <Link  className={styles.link} to="/profile">Василий Пупкин</Link>
                 </div>
