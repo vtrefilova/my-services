@@ -1,28 +1,31 @@
-.Header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #7749F8;
-}
-.HeaderButtons {
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #7749F8;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    top: 0;
+
+}
+.header_buttons {
+    display: flex;
+    flex-direction: row;
     margin-right: 32px;
 }
 
 
-.HeaderGroup {
+.header_group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
-
-.HeaderTitle {
+.header_title {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;

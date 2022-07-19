@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { SearchString } from './SearchString';
 import styles from "./styles/Header.module.css";
 import { ModalWindow } from './Modal';
 import { SignupForm } from './SignupForm';
@@ -13,12 +12,11 @@ export const Header = () => {
     const isLoggedin = useContext(AppContext).isLoggedin;
     
     return (
-        <header className={styles.Header}>
-            <div className={styles.HeaderGroup}>
-                <Link style={{textDecoration: 'none'}} to='/'><h1 className={styles.HeaderTitle}>Мои услуги</h1></Link>
-                <SearchString/>
+        <header className={styles.header}>
+            <div className={styles.header_group}>
+                <Link style={{textDecoration: 'none'}} to='/'><h1 className={styles.header_title}>Мои услуги</h1></Link>
             </div>
-            <div className={styles.HeaderButtons}>
+            <div className={styles.header_buttons}>
                 {!isLoggedin ? 
                 <>
                 <ModalWindow text='Регистрация'>

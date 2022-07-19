@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Mulish:wght@300&family=Noto+Sans:wght@500&display=swap');
-
 .full_card {
     display: flex;
     flex-direction: column;

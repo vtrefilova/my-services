@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Filter } from "./Filter";
 import styles from './styles/BodyHeader.module.css'
 import { AppContext }  from './App';
+import { SearchString } from "./SearchString";
 
 
 export const BodyHeader = () => {
@@ -11,6 +12,8 @@ export const BodyHeader = () => {
             <div className={styles.body_tagline}>
                 Найдите лучшего специалиста для выполнения любой вашей задачи!
             </div>
+            <div className={styles.filters}>
+                <SearchString/>
                 <div className={styles.filter_block}>
                 {cityFilter.city ?
                 <div className={styles.label}>
@@ -23,6 +26,7 @@ export const BodyHeader = () => {
                 </div> :
                 null}
                 <Filter/>
+                </div>
             </div>
         </div>
     );

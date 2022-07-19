@@ -52,7 +52,7 @@ const cards = [
       title: 'Уборка квартиры',
       description: 'Моем моем трубочиста чисто чисто',
       price: 3000,
-      date: '19.01.22',
+      date: '07.01.21',
   },
   {
     executor: "Иван Смирнов",
@@ -60,9 +60,55 @@ const cards = [
     title: 'Мытье окон',
     description: 'Моем на высоте',
     price: 5000,
-    date: '19.01.22',
+    date: '15.04.22',
+},
+{
+  executor: "Иван Иванов",
+  city: "Москва",
+  title: 'Стрижка мужская',
+  description: 'Стригу волосы классно дешево',
+  price: 2000,
+  date: '19.01.22',
+},
+{
+  executor: "Василий Пупкин",
+  city: "Новосибирск",
+  title: 'Уборка квартиры',
+  description: 'Моем моем трубочиста чисто чисто',
+  price: 3000,
+  date: '19.01.22',
+},
+{
+  executor: "Иван Иванов",
+  city: "Новосибирск",
+  title: 'Уборка квартиры',
+  description: 'Моем моем трубочиста чисто чисто',
+  price: 3000,
+  date: '19.01.22',
+},
+{
+  executor: "Иван Иванов",
+  city: "Новосибирск",
+  title: 'Уборка квартиры',
+  description: 'Моем моем трубочиста чисто чисто',
+  price: 3000,
+  date: '07.01.21',
+},
+{
+executor: "Иван Смирнов",
+city: "Томск",
+title: 'Мытье окон',
+description: 'Моем на высоте',
+price: 5000,
+date: '15.04.22',
 },
 ]
+
+const user = {
+  firstName: 'Василий',
+  middleName: 'Васильевич',
+  lastName: 'Пупкин'
+}
 
 function App() {
   const [text, setText] = useState('');
@@ -71,6 +117,7 @@ function App() {
   return (
     <AppContext.Provider value={{
       isLoggedin: true,
+      user,
       cards,
       titleFilter: {text, onChange: (e) => {setText(e.target.value)}},
       cityFilter: {city, onClick: (string) => {setCity(string)}},

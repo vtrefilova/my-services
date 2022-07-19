@@ -1,5 +1,6 @@
 .user_info {
     display: flex;
+    margin-top: 60px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:wght@500&display=swap');
