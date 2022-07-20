@@ -1,15 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Header } from './Header';
-import { LoginForm } from './Login';
-import { ModalWindow } from './Modal';
-import { SignupForm } from './SignupForm';
 import { MainPage } from './MainPage';
 import './styles/App.css';
-import { Routes, Route, Link} from 'react-router-dom' 
+import { Routes, Route } from 'react-router-dom' 
 import { UserProfile } from './UserProfile';
 import { UserOrders } from './UserOrders';
 import { UserServices } from './UserServices';
-import { findAllByTestId } from '@testing-library/react';
 
 export const AppContext = React.createContext({});
 
@@ -20,7 +16,7 @@ const cards = [
       title: 'Стрижка газона',
       description: 'Стригу газоны классно дешево',
       price: 2000,
-      date: '19.01.22',
+      date: new Date(2022, 0, 19),
   },
   {
       executor: "Иван Иванов",
@@ -28,7 +24,7 @@ const cards = [
       title: 'Стрижка мужская',
       description: 'Стригу волосы классно дешево',
       price: 2000,
-      date: '19.01.22',
+      date: new Date(2022, 0, 19),
   },
   {
       executor: "Василий Пупкин",
@@ -36,7 +32,7 @@ const cards = [
       title: 'Уборка квартиры',
       description: 'Моем моем трубочиста чисто чисто',
       price: 3000,
-      date: '19.01.22',
+      date: new Date(2022, 0, 19),
   },
   {
       executor: "Василий Пупкин",
@@ -44,7 +40,7 @@ const cards = [
       title: 'Уборка квартиры',
       description: 'Моем моем трубочиста чисто чисто',
       price: 3000,
-      date: '19.01.22',
+      date: new Date(2022, 0, 19),
   },
   {
       executor: "Василий Пупкин",
@@ -52,7 +48,7 @@ const cards = [
       title: 'Уборка квартиры',
       description: 'Моем моем трубочиста чисто чисто',
       price: 3000,
-      date: '07.01.21',
+      date: new Date(2021, 5, 7),
   },
   {
     executor: "Иван Смирнов",
@@ -60,7 +56,7 @@ const cards = [
     title: 'Мытье окон',
     description: 'Моем на высоте',
     price: 5000,
-    date: '15.04.22',
+    date: new Date(2019, 4, 1),
 },
 {
   executor: "Иван Иванов",
@@ -68,7 +64,7 @@ const cards = [
   title: 'Стрижка мужская',
   description: 'Стригу волосы классно дешево',
   price: 2000,
-  date: '19.01.22',
+  date: new Date(2022, 0, 19),
 },
 {
   executor: "Василий Пупкин",
@@ -76,7 +72,7 @@ const cards = [
   title: 'Уборка квартиры',
   description: 'Моем моем трубочиста чисто чисто',
   price: 3000,
-  date: '19.01.22',
+  date: new Date(2022, 0, 19),
 },
 {
   executor: "Иван Иванов",
@@ -84,7 +80,7 @@ const cards = [
   title: 'Уборка квартиры',
   description: 'Моем моем трубочиста чисто чисто',
   price: 3000,
-  date: '19.01.22',
+  date: new Date(2022, 0, 19),
 },
 {
   executor: "Иван Иванов",
@@ -92,7 +88,7 @@ const cards = [
   title: 'Уборка квартиры',
   description: 'Моем моем трубочиста чисто чисто',
   price: 3000,
-  date: '07.01.21',
+  date: new Date(2022, 0, 19),
 },
 {
 executor: "Иван Смирнов",
@@ -100,7 +96,7 @@ city: "Томск",
 title: 'Мытье окон',
 description: 'Моем на высоте',
 price: 5000,
-date: '15.04.22',
+date: new Date(2022, 0, 19),
 },
 ]
 
@@ -113,6 +109,7 @@ const user = {
 function App() {
   const [text, setText] = useState('');
   const [city, setCity] = useState('');
+  const [activeDateFilter, setActiveDateateFilter] = useState('new first');
 
   return (
     <AppContext.Provider value={{
@@ -121,7 +118,7 @@ function App() {
       cards,
       titleFilter: {text, onChange: (e) => {setText(e.target.value)}},
       cityFilter: {city, onClick: (string) => {setCity(string)}},
-      dateFilter: ''}}>
+      dateFilter: {activeDateFilter, onClick: (e) => {setActiveDateateFilter(e.target.name); console.log(activeDateFilter)}}}}>
       <div className="App">
         <Header/>
       </div>

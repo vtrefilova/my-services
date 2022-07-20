@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/Card.module.css"
+import styles from "./styles/Card.module.css";
 
 export const Card = ({ handleModal, title, city, price, date, action } ) => {
     const onCardClick = () => {
@@ -23,7 +23,7 @@ export const Card = ({ handleModal, title, city, price, date, action } ) => {
             </div>
             <div className={styles.card_footer}>
                 <div className={styles.card_date}>
-                    {`Опубликованно ${date}`}
+                    {date.toLocaleDateString('ru-RU')}
                 </div>
                 <button className={styles.card_button} onClick={(e) => {e.stopPropagation()}}>
                     {action}

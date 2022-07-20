@@ -1,15 +1,19 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styles from "./styles/Header.module.css";
 import { ModalWindow } from './Modal';
 import { SignupForm } from './SignupForm';
 import { LoginForm } from './Login';
 import { HeaderButton } from './HeaderButton';
 import { AppContext }  from './App';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { ServiceForm } from './ServiceForm';
 
 export const Header = () => {
     const isLoggedin = useContext(AppContext).isLoggedin;
+
+    let activeStyle = {
+        textDecoration: 'underline'
+    }
     
     return (
         <header className={styles.header}>
@@ -41,10 +45,31 @@ export const Header = () => {
                             modalContent: <ServiceForm key='modalContent'/>
                         }}
                         </ModalWindow>
-                        <Link className={styles.link} to="/user_services">Мои услуги</Link>
-                        <Link className={styles.link} to="/user_orders">Мои заказы</Link>
+                        <NavLink
+                            className={styles.link}
+                            to="/user_services"
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            }>
+                                Мои услуги
+                        </NavLink>
+                        <NavLink
+                            className={styles.link}
+                            to="/user_orders"
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            }>
+                                Мои заказы
+                        </NavLink>
                     </div>
-                    <Link  className={styles.link} to="/profile">Василий Пупкин</Link>
+                    <NavLink
+                        className={styles.link}
+                        to="/profile"
+                        style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                        }>
+                            Василий Пупкин
+                    </NavLink>
                 </div>
                 </>}
             </div>

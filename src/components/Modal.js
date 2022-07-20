@@ -1,6 +1,5 @@
 import React, { useState, createContext, cloneElement } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import styles from './styles/Modal.module.css';
 export const ModalContext = createContext({});
 
 export const ModalWindow = ({ text, children }) => {

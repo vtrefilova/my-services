@@ -4,18 +4,20 @@ import axios from "axios";
 import { AppContext }  from './App';
 import styled from "styled-components";
 import img from '/Users/valeriatrefilova/Study/shift-22-front/src/components/images/icons8-search.svg';
+import Form from 'react-bootstrap/Form';
 
 export const Filter = () => {
     const [ text, setText ] = useState('');
     const [cityList, setCityList] = useState([]);
     const cityFilter = useContext(AppContext).cityFilter;
+    const dateFilter = useContext(AppContext).dateFilter;
 
     const onInputChange = async (e) => {
         setText(e.target.value);
         if (e.target.value.length) {
           const result = await axios.get(`http://autocomplete.travelpayouts.com/places2?term=${e.target.value}&locale=ru&types[]=city`)
           .then(function (response) {
-            console.log(response);
+            console.log(new Date(2022, 1, 19) - new Date(2022, 0, 19));
             setCityList(response.data.filter((el, i) => 
               el.country_code === 'RU' && i < 5))
           })
@@ -44,6 +46,26 @@ export const Filter = () => {
                 </CustomInput>
             </CustomDropdownItem>
             {cityList.length ? cityList.map((el, i) => (<OtherCustomDropdownItem key={i} name={el.name} onClick={(e) => cityFilter.onClick(e.target.name)}>{el.name}</OtherCustomDropdownItem>)): null}
+            <Dropdown.Divider />
+            <Dropdown.Header>По дате</Dropdown.Header>
+            <CustomRadioButton
+            reverse="true"
+            label="Сначала новые"
+            name="new first"
+            type='radio'
+            checked={dateFilter.activeDateFilter === 'new first' ? 'checked' : ''}
+            id='0'
+            onChange={dateFilter.onClick}
+            />
+            <CustomRadioButton
+              reverse="true"
+              label="Сначала старые"
+              type='radio'
+              checked={dateFilter.activeDateFilter === 'old first' ? 'checked' : ''}
+              name="old first"
+              id='1'
+              onChange={dateFilter.onClick}
+            />
         </Dropdown.Menu>
       </Dropdown>
     );
@@ -52,6 +74,7 @@ export const Filter = () => {
 const CustomDropdownItem = styled(Dropdown.Item)`
   &:active {
     background-color: #FFFFFF;
+    color: black;
   }
   &:hover {
     background-color: #FFFFFF;
@@ -90,5 +113,17 @@ const CustomInput = styled.input`
   &:-webkit-input-placeholder {
     color: #ABB5BE;
   }
+`
 
+const CustomRadioButton = styled(Form.Check)`
+  margin-left: 16px;
+  & > input:checked {
+    background-color: #7749F8;
+    border-color: #7749F8;
+    box-shadow: 0 0 0 4px #EBE5FC;
+  }
+  & > input:active {
+    box-shadow: 0 0 0 4px #EBE5FC;
+    border-color: #7749F8;
+  }
 `

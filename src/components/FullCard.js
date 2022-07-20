@@ -25,7 +25,7 @@ export const FullCard = ({ title, city, price, date, executor, description, acti
             </div>
             <div className={styles.full_card_footer}>
                 <div className={styles.full_card_date}>
-                    {`Опубликованно ${date}`}
+                    {`Опубликовано ${date.toLocaleDateString('ru-RU')}`}
                 </div>
                 <button className={styles.full_card_button}>
                     { action }

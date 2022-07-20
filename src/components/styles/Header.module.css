@@ -7,7 +7,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 1001;
     top: 0;
 
 }
@@ -37,6 +37,10 @@
     margin-left: 45px;
     margin-top: 16px;
     margin-bottom: 16px;
+}
+
+.header_title:hover {
+    text-decoration: underline;
 }
 
 .button_group_1 {
