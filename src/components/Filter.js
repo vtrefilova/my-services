@@ -2,12 +2,11 @@ import React, { useState, useContext } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from "axios";
 import { AppContext }  from './App';
-import styles from  './styles/Filter.module.css';
 import styled from "styled-components";
+import img from '/Users/valeriatrefilova/Study/shift-22-front/src/components/images/icons8-search.svg';
 
 export const Filter = () => {
     const [ text, setText ] = useState('');
-    const [ city, setCity ] = useState('');
     const [cityList, setCityList] = useState([]);
     const cityFilter = useContext(AppContext).cityFilter;
 
@@ -81,7 +80,7 @@ const CustomInput = styled.input`
   font-size: 12px;
   line-height: 14px;
   color: #ABB5BE;
-  background-image: url(/Users/valeriatrefilova/Study/shift-22-front/src/components/images/icons8-search.svg);
+  background-image: url(${img});
   background-repeat: no-repeat;
   background-size: 40% 40%;
   background-position: -17px;
