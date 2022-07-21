@@ -19,9 +19,9 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <Logo to='/'>Мои услуги</Logo>
-            <div className={styles.header_buttons}>
                 {!isLoggedin ? 
                 <>
+                <div className={styles.unlogged_buttons}>
                 <ModalWindow text='Регистрация'>
                 {{ modalTrigger:
                     <HeaderButton key='modalTrigger' className='App-header-button' text='Регистрация' />,
@@ -34,44 +34,46 @@ export const Header = () => {
                     modalContent: <LoginForm key='modalContent'/>
                 }}
                 </ModalWindow>
+                </div>
                 </> :
                 <>
-                <div className={styles.button_group_2}>
-                    <div className={styles.button_group_1}>
-                        <ModalWindow text='Создать услугу'>
-                        {{ modalTrigger:
-                            <HeaderButton key='modalTrigger' className='App-header-button' text='Создать услугу' />,
-                            modalContent: <ServiceForm key='modalContent'/>
-                        }}
-                        </ModalWindow>
+                <div className={styles.header_buttons}>
+                    <div className={styles.button_group_2}>
+                        <div className={styles.button_group_1}>
+                            <ModalWindow text='Создать услугу'>
+                            {{ modalTrigger:
+                                <HeaderButton key='modalTrigger' className='App-header-button' text='Создать услугу' />,
+                                modalContent: <ServiceForm key='modalContent'/>
+                            }}
+                            </ModalWindow>
+                            <NavLink
+                                className={styles.link}
+                                to="/user_services"
+                                style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                                }>
+                                    Мои услуги
+                            </NavLink>
+                            <NavLink
+                                className={styles.link}
+                                to="/user_orders"
+                                style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                                }>
+                                    Мои заказы
+                            </NavLink>
+                        </div>
                         <NavLink
                             className={styles.link}
-                            to="/user_services"
+                            to="/profile"
                             style={({ isActive }) =>
                             isActive ? activeStyle : undefined
                             }>
-                                Мои услуги
-                        </NavLink>
-                        <NavLink
-                            className={styles.link}
-                            to="/user_orders"
-                            style={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                            }>
-                                Мои заказы
+                                Василий Пупкин
                         </NavLink>
                     </div>
-                    <NavLink
-                        className={styles.link}
-                        to="/profile"
-                        style={({ isActive }) =>
-                        isActive ? activeStyle : undefined
-                        }>
-                            Василий Пупкин
-                    </NavLink>
                 </div>
                 </>}
-            </div>
         </header>
     );
 }

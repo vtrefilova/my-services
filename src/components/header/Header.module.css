@@ -72,3 +72,12 @@
     text-decoration: underline;
     color: #DEE2E6;
 }
+
+.unlogged_buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.unlogged_buttons > * {
+    margin-right: 23px;
+}
