@@ -47,7 +47,7 @@ export const ServiceForm = (props) => {
       delete values.passwordCheck;
       const form = JSON.stringify(values, null, 2);
       try {
-        const result = await axios.post('cftmos.herokuapp.com/api/signUp' , form);
+        const result = await axios.post('/' , form);
         console.log(result);
         handleClose();
       } catch(err) {

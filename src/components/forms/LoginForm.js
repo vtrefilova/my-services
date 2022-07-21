@@ -47,7 +47,7 @@ export const LoginForm = () => {
       delete values.passwordCheck;
       const form = JSON.stringify(values, null, 2);
       try {
-        const result = await axios.post('/user', form);
+        const result = await axios.post('/', form);
         console.log(result);
         handleClose();
       } catch(err) {
