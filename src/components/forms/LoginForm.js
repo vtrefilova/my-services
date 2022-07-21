@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
-import styles from './styles/Signup.module.css';
-import {ModalContext} from './Modal';
-import { AppContext}  from './App';
+import styles from './Form.module.css';
+import { ModalContext }  from '../../contexts/context.js';
 
 
 const validate = values => {
@@ -30,14 +29,10 @@ const validate = values => {
     errors.password = 'Заполните поле';
   }
 
-  if (values.password !== values.passwordCheck) {
-    errors.passwordCheck = 'Пароли не совпадают'
-  }
-
   return errors;
 };
 
-export const SignupForm = (props) => {
+export const LoginForm = () => {
   const handleClose = useContext(ModalContext);
 
   const formik = useFormik({
@@ -46,31 +41,21 @@ export const SignupForm = (props) => {
       lastName: '',
       middleName: '',
       password: '',
-      passwordCheck: '',
     },
     validate,
     onSubmit: async(values) => {
       delete values.passwordCheck;
       const form = JSON.stringify(values, null, 2);
-      const headers = {
-        'Cache-Control': 'no-cache',
-        'Accept-Language': 'ru-RU',
-        'Content-Type': 'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-    };
-
       try {
-        const result = await axios.post('https://cftmos.herokuapp.com/api/signUp' , form, { headers });
+        const result = await axios.post('/user', form);
         console.log(result);
         handleClose();
-        
       } catch(err) {
         alert(err);
       }
     }
-});
-
+  })
+  
   return (
     <form className={styles.form} onSubmit={formik.handleSubmit}>
       <label htmlFor="lastName">Фамилия</label>
@@ -118,21 +103,9 @@ export const SignupForm = (props) => {
         value={formik.values.password}
         placeholder="Пароль"
       />
-
-      <label htmlFor="passwordCheck">Подтвердите пароль</label>
-      <input
-        className={styles.input}
-        id="passwordCheck"
-        name="passwordCheck"
-        type="password"
-        onChange={formik.handleChange}
-        value={formik.values.passwordCheck}
-        placeholder="Подтвердите пароль"
-      />
-      {formik.errors.passwordCheck ? <div>{formik.errors.passwordCheck}</div> : null}
-
+      
       <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-      <button className={styles.button} type="submit">Зарегистрироваться</button>
+      <button className={styles.button} type="submit">Войти</button>
       </div>
     </form>
   );

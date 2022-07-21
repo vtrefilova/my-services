@@ -1,5 +1,5 @@
 import { NavLink} from 'react-router-dom';
-import styles from './styles/Sidebar.module.css'
+import styles from './Sidebar.module.css'
 import { useState } from 'react';
 import cn from 'classnames';
 
@@ -11,9 +11,24 @@ export const Sidebar = () => {
         color: '#7749F8'
     }
 
-    const links = [ {to: '/profile', text: 'Информация о пользователе', id: 0},
-                    {to: '/user_orders', text: 'Мои заказы', id: 1},
-                    {to: '/user_services', text: 'Мои услуги', id: 2} ]
+    const links = [
+        {
+            to: '/profile',
+            text: 'Информация о пользователе',
+            id: 0
+        },
+        {
+            to: '/user_orders', 
+            text: 'Мои заказы', 
+            id: 1
+        },
+        {
+            to: '/user_services',
+            text: 'Мои услуги',
+            id: 2
+        }
+    ]
+
     return(
         <>
         <aside className={styles.sidebar}>

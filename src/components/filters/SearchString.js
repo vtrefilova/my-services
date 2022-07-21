@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
-import styles from './styles/SearchString.module.css';
-import { AppContext }  from './App';
+import React, { useContext } from 'react';
+import styles from './SearchString.module.css';
+import { AppContext }  from '../../contexts/context.js';
 
 export const SearchString = () => {
     const titleFilter = useContext(AppContext).titleFilter;

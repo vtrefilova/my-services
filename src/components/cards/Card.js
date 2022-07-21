@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/Card.module.css";
+import styles from "./Card.module.css";
 
 export const Card = ({ handleModal, title, city, price, date, action } ) => {
     const onCardClick = () => {

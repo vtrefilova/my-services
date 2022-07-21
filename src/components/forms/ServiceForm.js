@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
-import styles from './styles/Signup.module.css';
-import {ModalContext} from './Modal';
+import styles from './Form.module.css';
+import { ModalContext }  from '../../contexts/context.js';
 
 
 const validate = values => {

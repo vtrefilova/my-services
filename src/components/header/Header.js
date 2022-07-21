@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
-import styles from "./styles/Header.module.css";
-import { ModalWindow } from './Modal';
-import { SignupForm } from './SignupForm';
-import { LoginForm } from './Login';
+import styles from "./Header.module.css";
+import { ModalWindow } from '../modals/Modal';
+import { SignupForm } from '../forms/SignupForm';
+import { LoginForm } from '../forms/LoginForm';
 import { HeaderButton } from './HeaderButton';
-import { AppContext }  from './App';
-import { Link, NavLink } from 'react-router-dom';
-import { ServiceForm } from './ServiceForm';
+import { AppContext }  from '../../contexts/context.js';
+import { NavLink } from 'react-router-dom';
+import { ServiceForm } from '../forms/ServiceForm';
+import styled from "styled-components";
 
 export const Header = () => {
     const isLoggedin = useContext(AppContext).isLoggedin;
@@ -17,9 +18,7 @@ export const Header = () => {
     
     return (
         <header className={styles.header}>
-            <div className={styles.header_group}>
-                <Link style={{textDecoration: 'none'}} to='/'><h1 className={styles.header_title}>Мои услуги</h1></Link>
-            </div>
+            <Logo to='/'>Мои услуги</Logo>
             <div className={styles.header_buttons}>
                 {!isLoggedin ? 
                 <>
@@ -76,3 +75,23 @@ export const Header = () => {
         </header>
     );
 }
+
+const Logo = styled(NavLink)`
+display: flex;
+flex-shrink: 0;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 23px;
+line-height: 28px;
+color: #FFFFFF;
+margin-left: 45px;
+margin-top: 16px;
+margin-bottom: 16px;
+margin-right: 16px;
+text-decoration: none;
+&:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+`

@@ -1,7 +1,7 @@
 import React from "react";
-import { CardContainer } from "./CardContainer";
+import { CardContainer } from "../cards/CardContainer";
 import { BodyHeader } from "./BodyHeader";
-import styles from './styles/MainPage.module.css'
+import styles from './MainPage.module.css'
 
 export const MainPage = () => {
     return (

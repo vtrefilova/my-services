@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Header } from './Header';
-import { MainPage } from './MainPage';
-import './styles/App.css';
+import { Header } from './header/Header';
+import { MainPage } from './body/MainPage';
+import './App.css';
 import { Routes, Route } from 'react-router-dom' 
-import { UserProfile } from './UserProfile';
-import { UserOrders } from './UserOrders';
-import { UserServices } from './UserServices';
+import { UserProfile } from './user/UserProfile';
+import { UserOrders } from './user/UserOrders';
+import { UserServices } from './user/UserServices';
+import { AppContext }  from '../contexts/context.js';
 
-export const AppContext = React.createContext({});
 
 const cards = [
   {
@@ -118,7 +118,7 @@ function App() {
       cards,
       titleFilter: {text, onChange: (e) => {setText(e.target.value)}},
       cityFilter: {city, onClick: (string) => {setCity(string)}},
-      dateFilter: {activeDateFilter, onClick: (e) => {setActiveDateateFilter(e.target.name); console.log(activeDateFilter)}}}}>
+      dateFilter: {activeDateFilter, onClick: (e) => {setActiveDateateFilter(e.target.name)}}}}>
       <div className="App">
         <Header/>
       </div>

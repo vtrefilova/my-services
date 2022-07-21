@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './styles/FullCard.module.css'
+import styles from './FullCard.module.css'
 
 export const FullCard = ({ title, city, price, date, executor, description, action }) => {
     return (
