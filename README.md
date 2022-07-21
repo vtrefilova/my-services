@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# О проекте
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Название
 
-## Available Scripts
+Мои услуги
 
-In the project directory, you can run:
+## Описание
+
+Приложение для поиска и размещения услуг. На данный момент реализована визуальная часть проекта. Из запросов на бэк работает только регистрация пользователя. На главной странице доступна лента с карточками услуг. При клике на карточку всплывает модальное окно с подробным описанием услуги. Карточки можно фильтровать по названию услуги, городу и дате размещения объявления. Хедер отображается по разному для загегистрированного и незарегистрированного пользователя. В хедере для незаригестрированного пользователя размещены кнопки вход и регистрация при клике на которые всплывает модальное окно с соответствующей формой. В хедере для зарегистрированного пользователя размещены ссылки на странички личного кабинета пользователя и кнопка создать услугу при клике на которую всплывает модальное окно с формой. Чтобы переключаться между версией для зарегистрированного и незарегистрированного пользователя, нудно в файле App.js в массиве value передаваемом провайдеру в поле isLoggedin проставлять значения true и false соответственно. В личном кабинете 3 странички: профиль, мои заказы и мои услуги. В профиле размещена информация о пользователе. На странице мои заказы отображаются карточки заказанных услуг. На странице мои услуги отображаются   
+
+## Демо
+
+![](https://github.com/vtrefilova/my-services/blob/master/ScreenShots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202022-07-21%20%D0%B2%2016.47.11.png)
+
+![](https://github.com/vtrefilova/my-services/blob/master/ScreenShots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202022-07-21%20%D0%B2%2016.45.59.png)
+
+![](https://github.com/vtrefilova/my-services/blob/master/ScreenShots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202022-07-21%20%D0%B2%2016.47.40.png)
+
+![](https://github.com/vtrefilova/my-services/blob/master/ScreenShots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202022-07-21%20%D0%B2%2016.47.58.png)
+
+![](https://github.com/vtrefilova/my-services/blob/master/ScreenShots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202022-07-21%20%D0%B2%2016.48.15.png)
+
+## Технологии в проекте
+
+## Техническое описание проекта
+
+Приложение создано при помощи Create React App. Были использованы следующие технологии и библиотеки: React, React hooks, react-bootstrap, styled-components, axios, Aviasales API автокомплита для стран, городов и аэропортов.
+
+## Что нужно для запуска
+
+Чтобы запустить проект нужно склонировать его из git репозитория и выполнить следующие команды:
+
+### `npm install`
+
+установка пакетов необходимых для запуска проекта
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+запуск проекта на localhost
