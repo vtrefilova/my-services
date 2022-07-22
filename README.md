@@ -24,7 +24,7 @@
 
 ## Техническое описание проекта
 
-Приложение создано при помощи Create React App. Были использованы следующие технологии и библиотеки: React, React hooks, react-bootstrap, styled-components, axios, Aviasales API автокомплита для стран, городов и аэропортов.
+Приложение создано при помощи Create React App. Были использованы следующие технологии и библиотеки: React, React hooks, react-router-dom, react-bootstrap, styled-components, axios, Aviasales API автокомплита для стран, городов и аэропортов.
 
 ## Что нужно для запуска
 
